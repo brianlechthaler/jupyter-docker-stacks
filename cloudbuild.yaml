@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT/jupyter:networking', '-f', './networking-notebook/Dockerfile', './networking-notebook']
+  args: ['build', '-t', 'gcr.io/$_PROJECT/jupyter:networking', '-f', './networking-notebook/Dockerfile', './networking-notebook']
 images:
-- 'gcr.io/$PROJECT/jupyter:networking'
+- 'gcr.io/$_PROJECT/jupyter:networking'
