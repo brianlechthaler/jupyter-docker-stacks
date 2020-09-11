@@ -116,21 +116,13 @@ RUN conda install --quiet --yes 'tini=0.18.0' && \
 RUN conda install --quiet --yes \
     'notebook=6.1.3' \
     'jupyterhub=1.1.0' \
-    'jupyterlab=2.2.5' && \
-    conda clean --all -f -y && \
-    npm cache clean --force && \
-    jupyter notebook --generate-config && \
-    rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
-    rm -rf /home/$NB_USER/.cache/yarn && \
-    fix-permissions $CONDA_DIR && \
-    fix-permissions /home/$NB_USER
-
-# Install custom dependencies
-RUN conda install --quiet --yes \
+    'jupyterlab=2.2.5' && conda install --quiet --yes \
     -c conda-forge scapy && conda install --quiet --yes \
     -c conda-forge elasticsearch && conda install --quiet --yes\
     -c conda-forge requests && conda install --quiet --yes \
     -c conda-forge flask && \
+    conda clean --all -f -y && \
+    npm cache clean --force && \\
     conda clean --all -f -y && \
     npm cache clean --force && \
     jupyter notebook --generate-config && \
