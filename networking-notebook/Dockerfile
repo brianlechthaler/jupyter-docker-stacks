@@ -127,9 +127,9 @@ RUN conda install --quiet --yes \
 
 # Install custom dependencies
 RUN conda install --quiet --yes \
-    -c conda-forge scapy \
-    -c conda-forge elasticsearch \
-    -c conda-forge requests \
+    -c conda-forge scapy && conda install --quiet --yes \
+    -c conda-forge elasticsearch && conda install --quiet --yes\
+    -c conda-forge requests && conda install --quiet --yes \
     -c conda-forge flask && \
     conda clean --all -f -y && \
     npm cache clean --force && \
