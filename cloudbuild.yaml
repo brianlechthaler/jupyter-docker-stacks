@@ -1,3 +1,8 @@
+# Note:
+# In Cloud Build, you'll want to set the following substitute variable in any build trigger that references this cloudbuild.yaml file:
+# Variable Name: _PROJECT
+# Variable Value: set this to the name of your project, example: my-project.
+
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$_PROJECT/jupyter:networking', '-f', './networking-notebook/Dockerfile', './networking-notebook']
